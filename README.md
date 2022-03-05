@@ -8,6 +8,8 @@
 
 # electron
 - 일렉트론 문서에서 각 api가 어떤 프로세스와 연동될 수 있도록 되어있는지 작성되어있음
+- Browser Window, App, WebContents별로 이벤트가 각각 존재
+- WebContents는 Browser Window의 프로퍼티
 
 # 앱 이벤트들
 - before-quitting이벤트는 앱이 종료되기 전 발생하는 이벤트, e.preventDefault를 사용함으로써 바로 종료되는걸 막을 수 있음
@@ -45,3 +47,17 @@
 # Window State
 - 'electron-window-state' 모듈을 통해 윈도우의 상태를 기억할 수 있음
 - windowStateKeeper객체를 만들고 이를 메인 윈도우에 적용하면 됨
+
+# Web Contents
+- Browser Window의 웹 컨텐츠 정보를 가져오는 역할
+- webContents.getAllWebContents() : 모든 브라우저 윈도우의 정보를 가져옴(static)
+- dom-ready 이벤트 : 모든 HTML이 준비 되면 동작
+- did-finish-load 이벤트 : 이미지 컨텐츠가 로드 되면 동작
+- new-window : a태그의 target="_blank"와 같이 새롭게 창이 생성되는 경우 동작
+    - e.preventDefault를 사용하면 새롭게 창이 생성되진 않음
+- before-input-event : 키보드를 누르고 뗄때 발생하는 keyDown과 keyUp 이벤트를 잡아냄
+- did-navigate : 탐색이 완료되면 발생하는 이벤트
+- login : webContnents가 기본 인증을 수행하길 원할 때 발생되는 이벤트
+- media-paused, media-started-playing : 비디오 멈춤, 재생 시 동작하는 이벤트
+- context-menu : 마우스 우클릭 시 발생하는 이벤트, params를 통해 여러가지 속성을 가져올 수 있음
+
