@@ -71,3 +71,7 @@
 # Cookies
 - session.defaultSession으로부터 쿠키를 꺼내서 사용할 수 있음
 - get, set, remove 등의 메소드 제공
+
+# DownloadItem
+- 무언가를 다운로드 받을때 만들어지는 오브젝트
+- will-download 등의 이벤트가 존재
