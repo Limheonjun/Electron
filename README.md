@@ -67,3 +67,7 @@
 - 커스텀 세션을 기본적으로 저장되지 않음
 - 커스텀 세션 생성 시 session.fromPartition('persist:part1')와 같이 설정해주면 마찬가지로 세션이 저장됨
 - clearStorageData()를 통해 세션, 스토리지 및 스토리지 데이터, 쿠키, DB 등을 제거할 수 있음
+
+# Cookies
+- session.defaultSession으로부터 쿠키를 꺼내서 사용할 수 있음
+- get, set, remove 등의 메소드 제공
