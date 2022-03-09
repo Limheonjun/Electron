@@ -54,10 +54,16 @@
 - dom-ready 이벤트 : 모든 HTML이 준비 되면 동작
 - did-finish-load 이벤트 : 이미지 컨텐츠가 로드 되면 동작
 - new-window : a태그의 target="_blank"와 같이 새롭게 창이 생성되는 경우 동작
-    - e.preventDefault를 사용하면 새롭게 창이 생성되진 않음
+- e.preventDefault를 사용하면 새롭게 창이 생성되진 않음
 - before-input-event : 키보드를 누르고 뗄때 발생하는 keyDown과 keyUp 이벤트를 잡아냄
 - did-navigate : 탐색이 완료되면 발생하는 이벤트
 - login : webContnents가 기본 인증을 수행하길 원할 때 발생되는 이벤트
 - media-paused, media-started-playing : 비디오 멈춤, 재생 시 동작하는 이벤트
 - context-menu : 마우스 우클릭 시 발생하는 이벤트, params를 통해 여러가지 속성을 가져올 수 있음
 
+# Sessions
+- 모든 브라우저 윈도우는 한 개의 세션을 공유
+- session.fromPartition으로 세션을 생성하고 설정하여 브라우저별로 각각 다른 세션을 사용하도록 만들 수 있음
+- 커스텀 세션을 기본적으로 저장되지 않음
+- 커스텀 세션 생성 시 session.fromPartition('persist:part1')와 같이 설정해주면 마찬가지로 세션이 저장됨
+- clearStorageData()를 통해 세션, 스토리지 및 스토리지 데이터, 쿠키, DB 등을 제거할 수 있음
